@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<meta charset="UTF-8" />
+		<script>
+			let arr = [];
+			function addTicket() {
+				let uiq = Date.now();
+				console.log(uiq);
+				alert("your ID is" + uiq);
+
+				let name = document.getElementById("name").value;
+				if(name== ""){
+
+					alert("Enter Name");
+				}
+
+				let em = document.getElementById("em").value;
+				let opt = document.getElementById("selct").value;
+				if (opt == "sel") {
+					// alert("check");
+					document.getElementById("sel_valid").style.display =
+						"block";
+
+					document.getElementById("sel_valid").style.color = "red";
+
+					document.getElementById("sel_valid").innerHTML =
+						"Select Title";
+					document.getElementById("sel_valid").onfocus.innerHTML = "";
+				}
+
+				
+				// } else if (
+				// 	opt == "Engine" ||
+				// 	"Oil" ||
+				// 	"Paint" ||
+				// 	"Service" ||
+				// 	"Others" && (opt_sub == "subnull")
+				// ) {
+				// 	document.getElementById("sel_valid").innerHTML = "";
+
+				// 	document.getElementById("sel_valid1").style.color = "red";
+				// 	document.getElementById("sel_valid1").style.display =
+				// 		"block";
+
+				// 	document.getElementById("sel_valid1").innerHTML =
+				// 		"Select this";
+				// }
+				// else{
+				// 	document.getElementById("sel_valid1").innerHTML = "";
+				// 	document.getElementById("sel_valid1").style.display =
+				// 		"none";
+				// }
+				let opt_sub = document.getElementById("sel_opt").value;
+
+				if(opt_sub == "subnull"){
+					document.getElementById("sel_valid1").style.display = "block";
+
+					document.getElementById("sel_valid1").style.color = "red";
+					document.getElementById("sel_valid1").innerHTML = "Select this";
+				}
+
+				else{
+
+					document.getElementById("sel_valid1").innerHTML = "";
+					document.getElementById("sel_valid1").style.display = "none";
+
+			
+
+				}
+				// alert(opt_sub);
+				let txt = document.getElementById("txt").value;
+	
+				let ob = {
+					id:uiq,
+					name: name,
+					email: em,
+					Subject: opt,
+					Suboption: opt_sub,
+					Desc: txt,
+					assigned_to:"Not assigned",
+					status:"Pending",
+					comment:"not commented",
+					priority:"not defined"
+				};
+				arr.push(ob);
+				
+				localStorage.setItem("tickets", JSON.stringify(arr));
+				return true;
+
+				location.reload(); 
+				
+			}
+
+			function settingItem() {
+				let ref = localStorage.getItem("tickets");
+				if (ref) {
+					arr = JSON.parse(ref);
+				}
+			}
+			settingItem();
+
+		
+			
+			function sel() {
+				let opt = document.getElementById("selct").value;
+				if (opt == "sel") {
+					alert("Select the Title");
+				} else if (opt == "Others") {
+					document.getElementById("sel_opt").disabled = true;
+					document.getElementById("sel_opt").value = "sel";
+
+				} else if (opt == "Engine") {
+
+					document.getElementById("sel_opt").innerHTML =
+						" <option id=sel_opt selected disabled value=subnull> Select the Sub Title</option><option>Engine oil</option><option>Parts Check</option><option id=other>Others</option>  ";
+
+					document.getElementById("sel_opt").disabled = false;
+				} else if (opt == "Paint") {
+					document.getElementById("sel_opt").innerHTML =
+						" <option id=sel_opt selected disabled value=subnull> Select the Sub Title</option><option>Front Bumper</option><option>Side Doors</option> <option>Rear Bumper</option> <option id=other>Others</option>";
+					document.getElementById("sel_opt").disabled = false;
+				} else if (opt == "Service") {
+					document.getElementById("sel_opt").innerHTML =
+						" <option id=sel_opt selected disabled value=subnull> Select the Sub Title</option><option>Body Wash</option><option>Tuning</option> <option>Full Service</option> <option id=other>Others</option> ";
+					document.getElementById("sel_opt").disabled = false;
+				} else if (opt == "Oil") {
+					document.getElementById("sel_opt").innerHTML =
+						" <option id=sel_opt selected disabled value=subnull> Select the Sub Title</option><option>Oil Check</option><option>Oil Change</option> <option>Oil Filter</option> <option id=other>Others</option> ";
+					document.getElementById("sel_opt").disabled = false;
+				}
+
+
+
+			}
+		</script>
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$(".bars").click(function () {
+					$(".mobUl").toggle("active");
+
+					$("nav").show();
+				});
+			});
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="bars">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<header>
+			<div class="toggle"></div>
+			<a href="index.html"><img  src="img/logo.png" class="img-responsive" id="logo" /></a>
+			<ul class="navul nav-ul mobUl">
+				<a href="Generateticket.html"><li class="li">Generate Ticket</li></a>
+				<a href="inquiry.html"><li class="li">View Ticket</li></a>
+			</ul>
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="ticket-form">
+
+						<p id="req-field" role="aria-hidden"></p>
+						<form
+							onsubmit="return addTicket();"
+							action="javascript:void(0); 
+							"
+							class="form-group"
+						>
+							<div
+								class="col-lg-8 offset-lg-4 offset-xs-12 offset-sm-12"
+							>
+								<div class="input">
+									<label>Name:</label>
+									<input
+										type="text"
+										id="name"
+										class="form-control"
+									/>
+									<!-- <textarea class="form-control"></textarea> -->
+								</div>
+							</div>
+							<div class="col-lg-8 offset-lg-4 offset-xs-12 offset-sm-12">
+								<div class="input">
+									<label>Email:</label>
+
+									<input
+										type="email"
+										id="em"
+										class="form-control"
+									/>
+								</div>
+							</div>
+							<div class="col-lg-8 offset-lg-4 offset-xs-12 offset-sm-12">
+								<div class="input">
+									<label>Choose Subject:</label>
+									<!-- <input type="text" id="name" > -->
+
+									<select
+										class="form-control"
+										id="selct"
+										onchange="sel();"
+									>
+										<option selected disabled value="sel">
+											Choose Subject
+										</option>
+										<option value="Engine">Engine</option>
+										<option value="Paint">Paint</option>
+										<option value="Service">Service</option>
+										<option value="Oil">Oil</option>
+										<option value="Others">Others</option>
+									</select>
+									<p id="sel_valid" role="aria-hidden"></p>
+								</div>
+							</div>
+							<div class="col-lg-8 offset-lg-4 offset-xs-12 offset-sm-12">
+								<div class="input" role="aria-hidden">
+									<label>Choose Sub Title Subject:</label>
+									<!-- <input type="text" id="name" > -->
+									<select class="form-control" id="sel_opt">
+										<option></option>
+									</select>
+									<p id="sel_valid1" role="aria-hidden"></p>
+								</div>
+							</div>
+
+							<div class="col-lg-8 offset-lg-4 offset-xs-12 offset-sm-12">
+								<div class="input">
+									<label>Description:</label>
+									<!-- <input type="text" id="name" > -->
+									<textarea
+										class="form-control"
+										id="txt"
+									></textarea>
+								</div>
+							</div>
+
+							<div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 col-12 offset-lg-6 offset-sm-2 offset-xs-1">
+								<div class="input">
+									<input
+										type="submit"
+										class="form-control"
+										id="sub"
+									/>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

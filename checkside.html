@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css  ">
+    <script>
+        var names=[];
+        var arr=[];
+        getusers();
+        function on_load(){
+            // getusers();
+           let getTick = localStorage.getItem("tickets");
+           console.log(getTick);
+
+          arr= JSON.parse(getTick);
+            let options = "";
+            console.log(names)
+            for(let i=0; i<names.length; i++){
+                options += `
+                    <option >${names[i]}</option>
+                `
+            }
+
+            for(let i=0; i<arr.length; i++){
+                // let html = `
+                //     <tr>
+                //         <td>${show[i].name}</td>
+                //         <td>${show[i].email}</td>
+                //         <td>${show[i].Desc}</td>
+                //         <td>
+                //             <select class=form-control id=slec_id selected onchange=Assign(); >
+                         
+                //             <option >    ${options}    </options>
+                //             </select>    
+                //         </td>    
+                //     </tr>
+                // `;
+                document.getElementById("show").innerHTML+="<tr>"+"<td>"+arr[i].name+"</td>" +"<td>"+arr[i].email+"</td>"+"<td>"+arr[i].Desc+"</td>"+"<td><select  class=form-control id=slec_id"+[i]+" onchange=Assign("+i+");>" +options+" </select></td>"+"</tr>";
+
+                // document.getElementById("show").innerHTML+="<tr>"+"<td>"+show[i].name+"</td>" +"<td>"+show[i].email+"</td>"+"<td>"+show[i].Desc+"</td>"+"<td><select class=form-control id=slec_id onchange=Assign(); value=>"+options+"</select></td>"+"</tr>";
+                // console.log(html)
+                // document.getElementById("show").innerHTML += html;
+
+
+            
+         
+            }
+
+
+       
+        }
+        // function get_options()
+        // {
+        //     let data="";
+        //     for(let i=0;i<names.length;i++)
+        //     {
+        //         data+="<option>";
+        //         data += +names[i];
+        //         data += "</option>";
+        //     }
+        //     return (document.getElementById("names_opt").innerHTML=data); 
+        // }
+        function getusers(){
+
+            let getTick = localStorage.getItem("users");
+           console.log(getTick);
+
+          let show= JSON.parse(getTick);
+            names = show.map(n => {
+                return n.name;
+            })
+
+
+        //   for(let k=0;k<show.length; k++){
+
+
+
+        //     names.push(show[k].name);
+        //     alert(names);
+        //   }
+
+        }
+        
+        function Assign(val_id){
+           
+            
+            let vals=document.getElementById("slec_id"+val_id).value;
+            // let val2=document.getElementById("slec_id1").value;
+            alert(vals);
+            // alert(val2);
+        }
+            //   alert(arr[val].name);
+
+//             document.getElementById("assign").style.display="block";
+
+//             let update_name=document.getElementById("tick-name");
+//     let update_email=document.getElementById("tick-email");
+//     let update_password=document.getElementById("tick-descp");
+//     let assignee_name=document.getElementById("tick-assign");
+
+//     update_name.value=arr[val].name;
+    
+//             // console.log(update_name.value);
+//     update_email.value=arr[val].email;
+//     update_password.value=arr[val].Desc;
+//     alert(names[val]);
+//     assignee_name.value=names[val];
+
+
+
+
+//     // document.getElementById("ass").style.display = "block";
+
+
+
+
+
+
+// document.getElementById("assign-form").onsubmit = function () {
+//     // event.preventDefault();
+//         let edit_name= update_name.value;
+//         let edit_email=update_email.value;
+//         let edit_pass=update_password.value;
+//         if(edit_name || edit_email || edit_pass){
+//             arr[val].name = edit_name;
+//             arr[val].email = edit_email;
+//             arr[val].password = edit_pass;
+//             set_user();
+//             get_user();
+//             // arr.splice(arr[val].name ,1,edit_name);
+//             console.log(arr);
+//             // arr.splice(arr[val].email ,1,edit_email);
+
+
+//             // arr.splice(arr[val].pass ,1,edit_pass);
+      
+//             // get_user();
+//             document.getElementById("update_field").style.display =
+//             "none";
+//         }
+//         // return false;
+//     
+
+// var select = document.getElementById("slec_id").value;
+// JSON.parse(JSON.stringify(selectOption));
+// localStorage.setItem("Assign",selectOption);
+// console.log(select);         
+
+
+        // function update(){
+        //         // on_load();
+        //     let combo=document.getElementById("select").value;
+        //         // alert(combo);
+
+
+        // }
+
+
+window.onload=on_load;
+    </script>
+    <meta charset="UTF-8">
+    <!--IE Compatibility modes-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    
+    <!-- Bootstrap -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <!--For Development Only. Not required -->
+
+    <script>
+  $(document).ready(function() {
+       
+        
+$("#menu-toggle").click(function(e) {
+  e.preventDefault();
+// alert("hello");
+  $("#wrapper").toggleClass("toggled");
+});
+
+  });
+    </script>
+   <style>
+body {
+  overflow-x: hidden;
+}
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: 250px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #000;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: 0;
+  }
+  #wrapper.toggled {
+    padding-left: 250px;
+  }
+  #sidebar-wrapper {
+    width: 0;
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+  }
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}
+.bars1{
+
+    /* position: absolute; */
+	top: 18px;
+    right: 29px;
+    left: 10% !important;
+    width: 30px;
+    height: 100%;
+    padding-left: 10px;
+    /* background-color: black; */
+	/* display: none; */
+}
+.bars1 span{
+
+    display: block;
+	height: 3px;
+	margin: 4px 0;
+    background-color: black;
+   ;
+}
+
+#btn_sub{
+    margin-top: 20px !important;
+  margin:0 auto;
+}
+
+/* #menu-toggle{
+    position: relative;
+    left: 1%;
+    height: 60px;
+    transform:translateX(180deg);
+} */
+   </style>
+
+
+  </head>
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    Start Bootstrap
+                </a>
+            </li>
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Shortcuts</a>
+            </li>
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- <img src="./img/icon3.png" id="menu-toggle"> -->
+            <div class="bars1" id="menu-toggle" >
+              
+                <span></span>
+                <span></span> 
+            <span>  </span>
+            Menu
+                <!-- <span>-></span> -->
+             
+                
+
+            </div>
+            <!-- <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a> -->
+            <!-- Page Content -->
+   
+            <form onsubmit="return false">
+                <div class="container">
+                    <div class="row main">
+                        <div class="col-lg-12">
+                            
+            
+                <table class="col-lg-12">
+            <tr>
+            
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Description</th>
+                    <th>Assign to</th>
+            
+                    <!-- <th>Priority</th> -->
+            
+            </tr>
+            <tr>
+                    <tbody id="show"></tbody>
+                </tr>
+                
+                </table>
+            
+                <input type="submit" id="btn_sub" class="form-control col-lg-4">
+            </div>
+            </div>
+            </div>
+            
+            <!-- <input type="button" > -->
+            </form>
+            
+            <form id="assign-form" action="javascript:void(0);" method="post" onsubmit="return false">
+            
+                    <div id="assign" role="aria-hidden">
+                <input type="text" readonly id="tick-name">
+                <input type="text" readonly id="tick-email">
+            
+                <input type="text" readonly id="tick-descp">
+                <select id="tick-assign" > </select>
+            </div>
+            </form>
+            
+<!-- /#wrapper -->
+        </body>
+
+</html>

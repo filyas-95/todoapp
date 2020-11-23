@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function() {
+       
+       $('.bars').click(function(){
+       
+       $('.mobUl').toggle('active');
+       
+       $('nav').show(); 
+        }); 
+       
+       });
+
+     
+    </script>
+
+    <script>
+          function inq(){
+    let vle=  document.getElementById("inq-num").value;
+    alert(vle);
+        let check=[];
+     check = JSON.parse(localStorage.getItem("tickets"));
+                console.log(check);
+                
+                for(let i=0; i<check.length; i++){
+                if(vle==check[i].id)
+                {
+
+                //  document.getElementById("result").innerHTML="found";
+
+                // alert(check[i].status);
+                document.getElementById("result").innerHTML+= "Ticket id:" +check[i].id+  "<br> Dear customer Your Request is "+check[i].status ;
+
+                break;
+                }
+                    else{
+
+                            
+                        // alert("Kia dhoond rhe");
+                        // break;
+                    }
+        //     alert("sacrifice");
+        // }
+// console.log(check[i]);
+                }
+        // }
+    //    alert(vle);
+       }    
+    </script>
+</head>
+<body>
+    <div class="bars">
+        <span></span>
+        <span></span>
+        <span></span>
+     </div>
+    <header >
+        <div class="toggle">
+        </div>
+        <a href ="index.html" ><img  src="img/logo.png" class="img-responsive" id="logo" /></a>
+
+        <ul class="navul nav-ul mobUl">
+            <a href="Generateticket.html"><li class="li">Generate Ticket</li></a>
+            <a href="inquiry.html"><li class="li">View Ticket</li></a>
+        </ul>
+
+    </header>
+    <h1 class="inq-head">Welcome To Toyota Ticket Tracking System</h1>
+
+    <div class="container">
+        <div class="row">  
+
+            <div class="col-lg-5 offset-lg-2">
+                <div class="inq">
+            <form onsubmit="inq()" action="javascript:void(0);">
+
+                    <input type="number" id="inq-num" class="form-control" placeholder="Enter your Ticket Number">
+
+<p id="field"></p>
+<p id="add"></p>
+
+</div>
+</div>
+
+
+
+    <div class="col-lg-3 ">
+        <div class="inq">
+<input type="submit" id="btn_inq" value="Track Now" class="form-control">
+
+</div>
+</div>
+</form>
+
+                    <!-- </div> -->
+              
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+        <div class="col-lg-12">
+
+
+        <div >
+
+
+            <h6 style="text-align: center;" id="result"></h6>
+
+        </div>
+
+    </div></div></div>
+</body>
+</html>

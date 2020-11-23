@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="img/script.js"></script>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script>  $(document).ready(function() {
+       
+        
+        $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+        // alert("hello");
+          $("#wrapper").toggleClass("toggled");
+        });
+        
+          });</script>
+    <!-- <script>
+            let arr = [];
+
+        function adduser(){
+            let uiq = Date.now();
+				console.log(uiq);
+				let name = document.getElementById("user_name").value;
+
+				let email = document.getElementById("user_em").value;
+                alert(name);
+                let pass = document.getElementById("user_pass").value;
+				let role = document.getElementById("user_role").value;
+                
+                alert(pass);
+
+
+				let ob = {id:uiq,name:name ,email:email, password:pass,role:role};
+                console.log(ob);
+				arr.push(ob);
+            // alert(ob);
+				// localStorage.setItem("users", JSON.stringify(arr));
+// window.location.reload();
+
+				return true;
+			}
+
+            function settingItem()
+            {
+                let ref = localStorage.getItem("users");
+                if(ref) {
+                    arr = JSON.parse(ref);
+                }
+            }
+            settingItem();
+			function create_UUID() {
+				// let uiq = Date.now();
+				// console.log(uiq);
+			}
+
+
+        
+
+
+    </script> -->
+    <meta charset="UTF-8">
+    <style>
+			
+        body{
+      
+      
+      background-color: white;
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      @import url('https://fonts.googleapis.com/css?family=Poppins');
+      
+      /* BASIC */
+      
+     
+      body {
+      font-family: "Poppins", sans-serif;
+      height: 100vh;
+      }
+      
+      a {
+      color: #92badd;
+      display:inline-block;
+      text-decoration: none;
+      font-weight: 400;
+      }
+      
+      h2 {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      display:inline-block;
+      margin: 40px 8px 10px 8px; 
+      color: #cccccc;
+      }
+      
+      
+      
+      /* STRUCTURE */
+      
+      .wrapper {
+      display: flex;
+      align-items: center;
+      flex-direction: column; 
+      justify-content: left;
+      width: 100%;
+      min-height: 100%;
+      padding: 20px;
+      }
+      
+      #formContent {
+
+      -webkit-border-radius: 10px 10px 10px 10px;
+      border-radius: 10px 10px 10px 10px;
+      background: rgba(0,0,0,0.3);
+      padding: 30px;
+      width: 90%;
+      max-width: 450px;
+      position: relative;
+      padding: 0px;
+      -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+      box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+      text-align: center;
+      }
+      
+      #formFooter {
+      background-color: #f6f6f6;
+      border-top: 1px solid #dce8f1;
+      padding: 25px;
+      text-align: center;
+      -webkit-border-radius: 0 0 10px 10px;
+      border-radius: 0 0 10px 10px;
+      }
+      
+      
+      
+      /* TABS */
+      
+      h2.inactive {
+      color: #cccccc;
+      }
+      
+      h2.active {
+      color: #0d0d0d;
+      font-size: 20px;
+      border-bottom: 2px solid #5fbae9;
+      }
+      
+      
+      
+      /* FORM TYPOGRAPHY*/
+      
+      input[type=button], input[type=submit], input[type=reset]  {
+          background-color:rgba(211, 7, 7, 0.836);
+      
+      border: none;
+      color: white;
+      padding: 15px 80px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 13px;
+      -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+      box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      margin: 5px 20px 40px 20px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      color: #fff !important;
+      }
+      
+      input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+      background-color:rgba(211, 7, 7, 0.555);
+      }
+      
+      input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+      -moz-transform: scale(0.95);
+      -webkit-transform: scale(0.95);
+      -o-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+      transform: scale(0.95);
+      }
+      
+      input[type=text] {
+      background-color: transparent;
+      border: none;
+      color: white !important;
+
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 5px;
+      width: 85%;
+      border: 2px solid #f6f6f6;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      }
+      
+      input[type=email] {
+        background-color: transparent;
+
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 5px;
+      width: 85%;
+      border: 2px solid #f6f6f6;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      }
+      option {
+        color: black ;
+
+        
+      }
+      select {
+      background-color: transparent;
+      border: none;
+      /* color: rgb(236, 18, 18);
+      c */
+      color: white;
+      padding: 15px 32px;
+      font-weight: bold;
+      text-align-last: center ;
+
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 5px;
+      width: 85%;
+      border: 2px solid #f6f6f6;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      }
+      
+      input[type=password] {
+        background-color: transparent;
+
+      border: none;
+      color: white;
+
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 5px;
+      width: 85%;
+      border: 2px solid #f6f6f6;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -ms-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      }
+      input[type=text]:focus {
+     
+      background-color: rgba(167, 0, 0, 0.349);
+      border-bottom: 2px solid #5fbae9;
+      }
+      input[type=password]:focus {
+        background-color: rgba(167, 0, 0, 0.349);
+
+
+      border-bottom: 2px solid #5fbae9;
+      }
+      input[type=email]:focus {
+        background-color: rgba(167, 0, 0, 0.349);
+
+   
+      border-bottom: 2px solid #5fbae9;
+      }
+      input[type=text]:placeholder {
+        color: white;
+
+      }
+      
+      input[type=password]:placeholder {
+      color: white;
+      }
+      
+    placeholder:focus {
+      color: white;
+      }
+
+      input{
+
+        color: white;
+      }
+      
+      /* ANIMATIONS */
+      
+      /* Simple CSS3 Fade-in-down Animation */
+      .fadeInDown {
+      -webkit-animation-name: fadeInDown;
+      animation-name: fadeInDown;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      }
+      
+      @-webkit-keyframes fadeInDown {
+      0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+      }
+      100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+      }
+      }
+      
+      @keyframes fadeInDown {
+      0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+      }
+      100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+      }
+      }
+      
+      /* Simple CSS3 Fade-in Animation */
+      @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+      @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+      @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+      
+      .fadeIn {
+      opacity:0;
+      -webkit-animation:fadeIn ease-in 1;
+      -moz-animation:fadeIn ease-in 1;
+      animation:fadeIn ease-in 1;
+      
+      -webkit-animation-fill-mode:forwards;
+      -moz-animation-fill-mode:forwards;
+      animation-fill-mode:forwards;
+      
+      -webkit-animation-duration:1s;
+      -moz-animation-duration:1s;
+      animation-duration:1s;
+      }
+      
+      .fadeIn.first {
+      -webkit-animation-delay: 0.4s;
+      -moz-animation-delay: 0.4s;
+      animation-delay: 0.4s;
+      }
+      
+      .fadeIn.second {
+      -webkit-animation-delay: 0.6s;
+      -moz-animation-delay: 0.6s;
+      animation-delay: 0.6s;
+      }
+      
+      .fadeIn.third {
+      -webkit-animation-delay: 0.8s;
+      -moz-animation-delay: 0.8s;
+      animation-delay: 0.8s;
+      }
+      
+      .fadeIn.fourth {
+      -webkit-animation-delay: 1s;
+      -moz-animation-delay: 1s;
+      animation-delay: 1s;
+      }
+      
+      /* Simple CSS3 Fade-in Animation */
+      .underlineHover:after {
+      display: block;
+      left: 0;
+      bottom: -10px;
+      width: 0;
+      height: 2px;
+      background-color: #56baed;
+      content: "";
+      transition: width 0.2s;
+      }
+      
+      .underlineHover:hover {
+      color: #0d0d0d;
+      }
+      
+      .underlineHover:hover:after{
+      width: 100%;
+      }
+      
+      
+      
+      /* OTHERS */
+      
+      *:focus {
+      outline: none;
+      } 
+      
+      #icon {
+      width:60%;
+      }
+      
+      * {
+      box-sizing: border-box;
+      }
+      
+      
+      
+      input::placeholder{
+
+        color:white;
+      }
+      
+      .log::before{
+      
+      
+      padding-top: 50px;
+      display: flex !important;
+      height: 600px;    /*text-align: center;*/
+      /* transform: skew(20deg);*/
+      /*box-shadow: -3px 6px 7px 0px;*/
+filter: blur(2px);
+z-index: 1;
+/* position: fixed; */
+content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  /* background-image: url('https://i.imgur.com/lL6tQfy.png'); */
+  background-size:cover;
+  width: 100%;
+  height: 100%;
+
+  /* -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(52pxpx); */
+  filter: blur(2px);
+      background:  url(img/t1.jpg) center no-repeat;
+      
+      background-size: cover;
+      /*background-color: white;*/
+      }
+      #lab_pass{
+
+
+          text-align: left !important;
+      }
+
+      #user_role{
+            text-align: center;
+      }
+              </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- <img src="./img/icon3.png" id="menu-toggle"> -->
+                <div class="bars1" id="menu-toggle" >
+                  
+                    <span></span>
+                    <span></span> 
+                <span>  </span>
+                Menu
+                    <!-- <span>-></span> -->
+                 
+                    
+    
+                </div>
+  
+    
+
+<div class="wrapper fadeInDown log">
+	<div id="formContent">
+	  <!-- Tabs Titles -->
+	  <h2 class="active"> Sign Up</h2>
+	  <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+  
+	  <!-- Icon -->
+	  <div class="fadeIn first">
+		<!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+	  </div>
+  
+	  <!-- Login Form -->
+      <form  onsubmit="adduser();"  method="post" action="javascript:void(0);">
+
+	
+        
+        <input type="text" id="user_name" class="fadeIn second" placeholder="Enter Name">
+            <p id="name_valid"></p>
+    <input type="email" id="user_em" class="fadeIn second" placeholder="Enter Email">
+   
+    <select  id="user_role" class="fadeIn third" >
+        <option selected disabled >Select Role</option>
+        <option>Admin</option>
+        <option>Operational User</option>
+        </select>
+
+
+    <input type="password" id="user_pass" class="fadeIn third" placeholder="Enter Password" >
+    <input type="password" id="user_pass_confirm" class="fadeIn third" placeholder="Confirm Password" >
+
+
+    <input type="submit" class="fadeIn fourth" >
+
+		<!-- <input type="submit" class="fadeIn fourth" value="Log In"> -->
+	  </form>
+  
+	  <!-- Remind Passowrd -->
+	
+		<!-- <a class="underlineHover" href="#">Forgot Password?</a> -->
+	  </div>
+  
+	</div>
+  </div>
+</body>
+</html>

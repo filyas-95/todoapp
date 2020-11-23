@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css  ">
+    <!-- <script src="script.js">
+
+    </script> -->
+
+    <script src="assignto.js"></script>
+    <meta charset="UTF-8">
+    <!--IE Compatibility modes-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    
+    <!-- Bootstrap -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <!--For Development Only. Not required -->
+
+    <script>
+  $(document).ready(function() {
+       
+        
+$("#menu-toggle").click(function(e) {
+  e.preventDefault();
+// alert("hello");
+  $("#wrapper").toggleClass("toggled");
+});
+
+  });
+    </script>
+
+
+
+  </head>
+  <body class="tick-body">
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                Admin Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="Viewtickets.html">View Tickets</a>
+            </li>
+            
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- <img src="./img/icon3.png" id="menu-toggle"> -->
+            <div class="bars1" id="menu-toggle" >
+              
+                <span></span>
+                <span></span> 
+            <span>  </span>
+            Menu
+                <!-- <span>-></span> -->
+             
+                
+
+            </div>
+            <!-- <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a> -->
+            <!-- Page Content -->
+   
+            <form  id="assign-form">
+                <div class="container">
+                    <div class="row main">
+                        <div class="col-lg-12">
+                            
+            
+                <table class="col-lg-12">
+            <tr>
+            
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Description</th>
+                    <th>Title</th>
+                    <th>Sub-Title</th>
+                    <th>Assigned</th>
+
+                    <th>Assign to</th>
+            
+                    <!-- <th>Priority</th> -->
+            
+            </tr>
+            <tr>
+                    <tbody id="show"></tbody>
+                </tr>
+                
+                </table>
+            
+                <!-- <input type="submit" id="btn_sub" class="form-control col-lg-4"> -->
+            </div>
+            </div>
+            </div>
+            
+            <!-- <input type="button" > -->
+            </form>
+            
+            <!-- <form id="assign-form" action="javascript:void(0);" method="post" onsubmit="return false">
+            
+                    <div id="assign" role="aria-hidden">
+                <input type="text" readonly id="tick-name">
+                <input type="text" readonly id="tick-email">
+            
+                <input type="text" readonly id="tick-descp">
+                <select id="tick-assign" > </select>
+            </div>
+            </form> -->
+            
+<!-- /#wrapper -->
+        </body>
+
+</html>
